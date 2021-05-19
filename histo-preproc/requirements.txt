@@ -1,0 +1,4 @@
+numpy
+openslide-python
+SimpleITK
+parse

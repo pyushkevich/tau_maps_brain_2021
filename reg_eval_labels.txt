@@ -1,0 +1,20 @@
+################################################
+# ITK-SnAP Label Description File
+# File format: 
+# IDX   -R-  -G-  -B-  -A--  VIS MSH  LABEL
+# Fields: 
+#    IDX:   Zero-based index 
+#    -R-:   Red color component (0..255)
+#    -G-:   Green color component (0..255)
+#    -B-:   Blue color component (0..255)
+#    -A-:   Label transparency (0.00 .. 1.00)
+#    VIS:   Label visibility (0 or 1)
+#    IDX:   Label mesh visibility (0 or 1)
+#  LABEL:   Label description 
+################################################
+    0     0    0    0        0  0  0    "Clear Label"
+    1   252    1    7        1  1  1    "Inner ERC/CS"
+    2     0  255    0        1  1  1    "Outer SUB/ERC"
+    3    32  255  255        1  1  1    "Inner SRLM"
+    4   253  128    8        1  1  1    "Outer Hippocampus"
+    5   255  255   10        1  1  1    "Connecter"

@@ -1,0 +1,31 @@
+Dataset description
+===
+This is a dataset to accompany the 2020 journal submission "3D Mapping of Neurofibrillary Tangle Burden in the Human Medial Temporal Lobe" by Yushkevich et al.. A preliminary study using a portion of this dataset was presented in 
+
+* P. A. Yushkevich et al., "3D Mapping of TAU Neurofibrillary Tangle Pathology in the Human Medial Temporal Lobe," 2020 IEEE 17th International Symposium on Biomedical Imaging (ISBI), Iowa City, IA, USA, 2020, pp. 1312-1316, doi: 10.1109/ISBI45749.2020.9098462.
+
+The dataset contains ex vivo MRI scans, reconstructed Nissl histology sections, reconstructed anti-tau immmunohistochemistry sections, and derived tau neurofibrillary tangle burden maps for 18 brain donors.
+
+BIDS Directory Structure
+===
+
+Subject-level data
+---
+Raw MRI images at 7T and 9T
+
+    sub-{id}/ses-9T/anat
+    sub-{id}/ses-7T/anat
+    
+Reconstructed MRI and histological data in whole-specimen space (i.e., Figure 6 in the paper):
+
+    derivatives/historecon-subjspace/sub-{id}
+
+Reconstructed MRI and histological data in template space:
+
+    derivatives/historecon-tempspace/sub-{id}
+
+Group-level data
+---
+Average burden and frequency maps in template space (Figure 7):
+
+    derivatives/historecon-tempspace/template

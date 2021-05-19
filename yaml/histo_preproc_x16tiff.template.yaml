@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: hist-tiff-job-%JOBID%
+spec:
+  backoffLimit: 3
+  template:
+    metadata:
+      name: hist-prep-pod
+    spec:
+      volumes:
+        - name: google-cloud-key
+          secret:
+            secretName: gse-key
+      containers:
+      - name: hist-prep-container
+        image: pyushkevich/histo-preproc:latest
+        command: ["/bin/bash"]
+        args: [ "make_x16_pyramid.sh", "%ID%", "%SVS%" ]
+        resources:
+          limits:
+            memory: "2Gi"
+        volumeMounts:
+          - name: google-cloud-key
+            mountPath: /var/secrets/google
+      restartPolicy: Never
+      nodeSelector:
+        tier: lowcost
